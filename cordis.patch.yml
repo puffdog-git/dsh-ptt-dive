@@ -1,0 +1,5 @@
+- insert:
+    - id: dsh-ptt-dive
+      name: dsh-ptt-dive
+      config:
+        enabled: true

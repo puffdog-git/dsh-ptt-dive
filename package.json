@@ -1,0 +1,68 @@
+{
+  "name": "dsh-ptt-dive",
+  "version": "0.5.0",
+  "description": "DSH 插件 · 刷 PTT：讀看板與推文、寫日報、收集鄉民用語樣本；推文、回文、發文可選（預設關閉，需確認）。附唯讀 MCP stdio server。",
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib/",
+    "mcp-server.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "ptt",
+    "taiwan",
+    "mcp"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check:client": "node --check lib/client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "author": {
+    "name": "puffdog-git",
+    "url": "https://github.com/puffdog-git"
+  },
+  "engines": {
+    "node": ">=22.15"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puffdog-git/dsh-ptt-dive.git"
+  },
+  "homepage": "https://github.com/puffdog-git/dsh-ptt-dive#readme",
+  "bugs": {
+    "url": "https://github.com/puffdog-git/dsh-ptt-dive/issues"
+  }
+}
