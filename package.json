@@ -1,6 +1,6 @@
 {
   "name": "dsh-ptt-dive",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "DSH 插件 · 刷 PTT：讀看板與推文、寫日報、收集鄉民用語樣本；推文、回文、發文可選（預設關閉，需確認）。附唯讀 MCP stdio server。",
   "license": "MIT",
   "type": "module",

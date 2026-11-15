@@ -57,7 +57,14 @@ memU 每個工作區各有一個記憶庫。把「寫到哪個工作區」選成
 
 ## 風格庫會改變 AI 的用詞嗎
 
-不會自動改變。風格庫是一份參考資料：AI 在對話裡呼叫 `ptt_style_refs` 才會拿到幾句樣本，而且工具說明要求只學語氣、不照抄、不改人設。
+在 DSH 的一般對話裡不會自動改變。風格庫是一份參考資料：AI 在對話裡呼叫 `ptt_style_refs` 才會拿到幾句樣本，而且工具說明要求只學語氣、不照抄、不改人設。
+
+**給 Discord 賽博群友用**：dsh-discord-cyberfriend 1.0.6 以上有「鄉民語氣」功能（預設關閉），開啟後 Discord 上的文字回覆會依情境或機率參考這裡的樣本，帶一點鄉民的口氣。兩個插件裝在同一個 DSH 就會自動接上，不需要另外設定。
+
+**給其他插件用**：本插件把風格庫登記在 `globalThis[Symbol.for('dsh.style.providers.v1')].providers`（提供者 ID `ptt`）。接口只讀，回傳句子、來源看板與話題，沒有帳號，也不會觸發網路請求：
+
+- `lookup({ query, sources, count })` → `{ samples: [{ text, kind, source, topic }], matched, total }`
+- `status()` → `{ name, samples, sources: [{ board, count }] }`
 
 ## 送給模型的內容
 
