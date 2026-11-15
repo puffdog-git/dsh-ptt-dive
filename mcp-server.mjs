@@ -71,7 +71,7 @@ const send = (message) => process.stdout.write(JSON.stringify(message) + '\n');
 async function handle(message) {
   const { id, method, params } = message;
   if (method === 'initialize')
-    return { protocolVersion: params?.protocolVersion || '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'dsh-ptt-dive', version: '0.6.0' } };
+    return { protocolVersion: params?.protocolVersion || '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'dsh-ptt-dive', version: '0.7.0' } };
   if (method === 'ping') return {};
   if (method === 'tools/list') return { tools: TOOLS.map(({ run, ...tool }) => ({ ...tool, annotations: { readOnlyHint: true } })) };
   if (method === 'tools/call') {
