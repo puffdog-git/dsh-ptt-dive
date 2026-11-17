@@ -37,11 +37,19 @@ DSH 插件：讀 PTT 看板與推文、寫日報、收集鄉民用語樣本。
 
 ## 安裝
 
+從 npm 安裝：
+
+```bash
+dsh plugin --profile web add dsh-ptt-dive
+```
+
+或直接從 GitHub 安裝（會拿到最新的提交）：
+
 ```bash
 dsh plugin --profile web add github:puffdog-git/dsh-ptt-dive
 ```
 
-安裝後重啟 DSH，進入 **設定 → 刷 PTT**。加入看板、按「儲存」，再按「刷一輪」。
+桌面版請把 `web` 換成 `desktop`。安裝後重啟 DSH，進入 **設定 → 刷 PTT**。加入看板、按「儲存」，再按「刷一輪」。
 
 八卦板（Gossiping）等看板會先問是否滿 18 歲；要讀這些看板，請在設定頁勾選「我已滿 18 歲」。
 
